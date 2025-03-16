@@ -1,0 +1,64 @@
+﻿@page
+@model CryptoWallet.Pages.CryptoPageModel
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Portfel Kryptowalut</h2>
+
+    <!-- Formularz -->
+    <form method="post" class="border p-4 rounded shadow-sm bg-light">
+        <div class="mb-3">
+            <label for="CoinName" class="form-label">Nazwa kryptowaluty:</label>
+            <input id="CoinName" asp-for="CoinName" class="form-control" placeholder="Np. Bitcoin, Ethereum" />
+        </div>
+        <div class="mb-3">
+            <label for="EntryPrice" class="form-label">Cena wejścia (USD):</label>
+            <input id="EntryPrice" asp-for="EntryPrice" type="number" step="0.01" class="form-control" placeholder="Podaj cenę zakupu" />
+        </div>
+        <div class="mb-3">
+            <label for="DepositUSD" class="form-label">Wpłata w złotówkach:</label>
+            <input id="DepositUSD" asp-for="DepositUSD" type="number" step="0.01" class="form-control" placeholder="Kwota w PLN" />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Dodaj</button>
+        
+    </form>
+
+    <!-- Wyświetlanie tabeli, jeśli są dane -->
+    @if (Model.Coins.Any())
+    {
+        <h3 class="mt-5 mb-3">Twoje kryptowaluty:</h3>
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Cena wejścia (USD)</th>
+                    <th>Wpłata w złotówkach (PLN)</th>
+                    <th>Aktualna cena (USD)</th>
+                    <th>Wartość całkowita (USD)</th>
+                    <th>Akcja</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var coin in Model.Coins)
+                {
+                    <tr>
+                        <td>@coin.CoinName</td>
+                        <td>@coin.EntryPrice</td>
+                        <td>@coin.DepositUSD</td>
+                        <td>@coin.CurrentPrice</td>
+                        <td>@coin.TotalValue</td>
+                        <td>
+                            <div class="btn-group" role="group">                        
+                            <button type="button" class="btn btn-primary" asp asp-route="@coin.Id">Middle</button>                         
+                            </div>
+                        </td>
+                        
+
+                    </tr>
+                    
+                }
+              
+            </tbody>
+        </table>
+
+    }
+</div>
