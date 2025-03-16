@@ -1,0 +1,40 @@
+﻿# .NET Core
+bin/
+obj/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# User-specific files
+appsettings.Development.json
+appsettings.Local.json
+
+# ASP.NET temporary files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Entity Framework Core
+# Ignore database-related files that are generated during migration or local DB storage
+**/migrations/
+app.db
+*.bak
+*.sql
