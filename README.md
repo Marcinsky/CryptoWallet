@@ -1,3 +1,3 @@
-Hello there, 
+Hello there, this is my CryptoWallet project in .NET
 
-this is my CryptoWallet project in .NET
+
