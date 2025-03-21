@@ -1,8 +1,7 @@
 <<<<<<< HEAD
 ﻿# Ignore build results
 bin/
-obj/
-src/
+obj
 public/
 
 # Ignore ASP.NET Core environment files (local configuration)
