@@ -17,16 +17,15 @@ namespace CryptoWallet.Models
     public class User
     {
         public int UserId { get; set; }
-        public string Username { get; set; }
-        public string PasswordHash { get; set; }
+        public required string  Username { get; set; }
+        public required string PasswordHash { get; set; }
     }
 
     public class Wallet
     {
         public int WalletId { get; set; }
         public int UserId { get; set; }
-        public int CoinId { get; set; }
-        public string CoinName { get; set; }
+        public required string CoinName { get; set; }
         public decimal EntryPriceUSD { get; set; }
         public decimal AmountOwned { get; set; }
         public decimal CurrentPriceUSD { get; set; }
